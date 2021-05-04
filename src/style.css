@@ -1,0 +1,32 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    height: 100vh;
+    font-family: 'Poppins';
+}
+
+body{
+    background-image: repeating-linear-gradient(22.5deg, rgb(0,0,0) 0px, rgb(0,0,0) 20px,transparent 20px, transparent 21px),repeating-linear-gradient(112.5deg, rgb(0,0,0) 0px, rgb(0,0,0) 20px,transparent 20px, transparent 21px),linear-gradient(90deg, hsl(148,52%,47%),hsl(220,52%,47%),hsl(292,52%,47%),hsl(4,52%,47%),hsl(76,52%,47%));
+    overflow-x: hidden;
+
+}
+
+.webgl
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    
+}
