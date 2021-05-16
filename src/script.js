@@ -5,6 +5,7 @@ import * as dat from 'dat.gui'
 import { Vector3 } from 'three'
 import vertexShader from './shaders/vertex.glsl'
 import fragmentShader from './shaders/fragment.glsl'
+import pointFragmentShader from './shaders/pointFragment.glsl'
 
 // Debug
 const gui = new dat.GUI()
@@ -99,6 +100,15 @@ function generateStars(){
         blending: THREE.AdditiveBlending,
         map: starShape
     })
+    // starsMaterial = new THREE.ShaderMaterial({
+    //     vertexShader: vertexShader,
+    //     fragmentShader: pointFragmentShader,
+    //     side: THREE.DoubleSide,
+    //     uniforms: {
+    //         uColor: { value: null },
+    //         uTime: { value: 0 }
+    //     }
+    // })
     
     stars = new THREE.Points(starsGeometry, starsMaterial)
     scene.add(stars)
@@ -209,6 +219,7 @@ const tick = () =>
 {
 
     const elapsedTime = clock.getElapsedTime()
+    textMaterial.uniforms.uTime.value = elapsedTime
 
     // Update objects
 

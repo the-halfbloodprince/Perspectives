@@ -1,10 +1,9 @@
-uniform vec3 uColor;
 
-varying vec3 vColor;
+varying vec2 vUv;
 
 void main() {
 
     gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
 
-    vColor = uColor;
+    vUv = uv;
 }

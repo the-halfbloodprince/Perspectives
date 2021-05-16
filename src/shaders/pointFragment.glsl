@@ -20,9 +20,11 @@ void main(){
         coord.y = coord.y + sin(coord.x + cos(len)) + sin(uTime / 12.);
     }
 
-    gl_FragColor = vec4(cos(len) + .3 * sin(uTime), .7 * cos(uTime * 0.5) + cos(len), .67 * sin(uTime + cos(uTime)) - cos(len), 1.0);
+    // gl_PointSize= 2;
+
+    // gl_FragColor = vec4(cos(len) + .3 * sin(uTime), .7 * cos(uTime * 0.5) + cos(len), .67 * sin(uTime + cos(uTime)) - cos(len), 1.0);
     // gl_FragColor = vec4(0., cos(len * 4.), cos(len * 3.), 1.0);
 
     // gl_FragColor = vec4(uColor, 1.0);
-
+    gl_FragColor = mix(vec4(cos(len), cos(len), cos(len), 1.0), vec4(uColor, 1.0), uTime);
 }
